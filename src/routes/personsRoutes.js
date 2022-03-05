@@ -53,7 +53,6 @@ router.get('/:id', async (req, res) => {
 })
 
 //Atualizar dados
-
 router.patch('/:id', async (req, res) => {
     const id = req.params.id;
 
@@ -69,7 +68,8 @@ router.patch('/:id', async (req, res) => {
         const updatedPerson = await Person.updateOne({ _id: id }, person);
 
         if (updatedPerson.matchedCount === 0) {
-            res.status(422).json({message: "Erro ao atualizar!"})
+            res.status(422).json({message: "Erro ao atualizar!"});
+            return;
         }
 
         res.status(200).json(person)
@@ -80,5 +80,29 @@ router.patch('/:id', async (req, res) => {
     }
 
 })
+
+//Deletar usuário
+router.delete('/:id', async (req, res) => {
+    const id = req.params.id;
+
+    const person = await Person.findOne({ _id: id });
+
+    if (!person) {
+        res.status(422).json({message: "Usuário não encontrado"});
+        return;
+    }
+
+    try {
+        await Person.deleteOne({ _id: id });
+        res.status(200).json({message: "Usuário deletado!"})
+
+
+    } catch (error) {
+        res.status(500).json({ error: error })
+    }
+
+})
+
+
 
 module.exports = router;
