@@ -57,4 +57,25 @@ router.patch("/:id", async (req, res) => {
 
 })
 
+
+//Deletar usuário
+router.delete("/:id", async (req, res) => {
+    const id = req.params.id;
+
+    const ingredient = await Ingredient.findOne({ _id: id });
+
+    if (!ingredient) {
+        res.status(422).json({message: "Ingrediente não encontrado!"});
+        return;
+    }
+
+    try {
+        await Ingredient.deleteOne({ _id: id });
+        res.status(200).json({message: "Ingrediente deletado!"})
+
+
+    } catch (error) {
+        res.status(500).json({ error: error })
+    }
+})
 module.exports = router;    
