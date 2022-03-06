@@ -32,4 +32,29 @@ router.get('/', async (req, res) => {
     }
 })
 
+//Atualizar ingrediente
+router.patch("/:id", async (req, res) => {
+    const id = req.params.id;
+
+    const { ingredient_name, ingredient_cost, ingredient_amount } = req.body;
+
+    const ingredient = { ingredient_name, ingredient_cost, ingredient_amount };
+
+    try {
+        const updatedIngredient = await Ingredient.updateOne({ _id: id }, ingredient);
+
+        if (updatedIngredient.matchedCount === 0) {
+            res.status(422).json({ message: "Erro ao atualizar!" });
+            return;
+        }
+
+        res.status(200).json(ingredient)
+
+
+    } catch (error) {
+        res.status(500).json({ error: error })
+    }
+
+})
+
 module.exports = router;    
