@@ -6,14 +6,12 @@ const app = express();
 const PORT = process.env.PORT || 3000
 
 app.use(express.json());
-app.use(express.urlencoded({ extends: true }));
+app.use(express.urlencoded({ extends: false }));
 
 
 app.listen(PORT, () => {
     console.log('Servidor rodando....');
 })
-
-
 
 
 
@@ -23,9 +21,13 @@ app.get('/', (req, res) => {
     res.send("<h1>Conectado com sucesso!</h1><h3>Configurações realizadas corretamente!</h3><p>As configurações do node ao mongo foram feitas corretamente!</p>")
 })
 
-const personRoutes = require('./routes/personsRoutes')
+//Rotas pessoas
+const personRoutes = require('./routes/personsRoutes');
+app.use('/person',personRoutes);
 
-app.use('/person',personRoutes)
+//Rotas ingredientes
+const IngredientRoutes = require('./routes/ingredientsRoutes');
+app.use('/ingredients',IngredientRoutes);
 
 /* 
 comandos npm init- criar arquivo json;
