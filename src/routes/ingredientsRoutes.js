@@ -13,7 +13,20 @@ router.post('/', async (req, res) => {
 
     try {
         await Ingredient.create(ingredient);
-        res.status(201).json({message:"Ingrediente criado com sucesso!"})
+        res.status(201).json({ message: "Ingrediente criado com sucesso!" })
+    } catch (error) {
+        res.status(500).json({ error: error })
+    }
+})
+
+//Exibir todos os ingredientes
+router.get('/', async (req, res) => {
+    try {
+        const ingredient = await Ingredient.find();
+
+        res.status(200).json(ingredient)
+
+
     } catch (error) {
         res.status(500).json({ error: error })
     }
