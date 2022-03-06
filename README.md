@@ -9,6 +9,8 @@ Descrição do Projeto
 <p>Estou desenvolvendo este projeto para centralizar meus estudos de NODEJS em um único repositório, onde a cada conteúdo aprendido irei criar novas funcionalidades,
 melhorar o código fonte com questões de segurança, design patterns, deixando-o mais legível possível.</p>
 
+<p>Neste repositório irei criar a API da minha aplicação!</p>
+
 
 ### 🛠 Tecnologias
 
