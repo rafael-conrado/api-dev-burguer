@@ -16,7 +16,14 @@ melhorar o código fonte com questões de segurança, design patterns, deixando-
 
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-plain-wordmark.svg" width="80" height="80"/><img 
 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" width="80" height="80" /><img 
-src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg" width="80" height="80"/>
+src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg" width="80" height="80"/><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="80" height="80"/>
+
+### 🔗 Link para consulta
+Principal: https://dev-burguer.herokuapp.com/
+
+Rota Pessoas: https://dev-burguer.herokuapp.com/person
+
+Rota ingredientes: https://dev-burguer.herokuapp.com/ingredients
 
 ### autor
 <img src="https://avatars.githubusercontent.com/u/52204078?s=400&u=39906fd95bef7d0983fcbc2adf5d4d01878f378f&v=4" width="100" height="100"/>
