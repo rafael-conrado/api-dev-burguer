@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
 
     try {
         await Ingredient.create(ingredient);
-        res.status(201).json({ message: "Ingrediente criado com sucesso!" })
+        res.status(201).json({ message: "Ingrediente criado com sucesso!" });
     } catch (error) {
         res.status(500).json({ error: error })
     }

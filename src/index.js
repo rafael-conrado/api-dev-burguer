@@ -26,8 +26,12 @@ const personRoutes = require('./routes/personsRoutes');
 app.use('/person',personRoutes);
 
 //Rotas ingredientes
-const IngredientRoutes = require('./routes/ingredientsRoutes');
-app.use('/ingredients',IngredientRoutes);
+const ingredientsRoutes = require('./routes/ingredientsRoutes');
+app.use('/ingredient',ingredientsRoutes);
+
+//Rotas ingredientes
+const productRoutes = require('./routes/productRoutes');
+app.use('/product',productRoutes);
 
 /* 
 comandos npm init- criar arquivo json;
