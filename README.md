@@ -6,10 +6,26 @@
 <h1 align="center">dev-burguer</h1>
 
 Descrição do Projeto
-<p>Estou desenvolvendo este projeto para centralizar meus estudos de NODEJS em um único repositório, onde a cada conteúdo aprendido irei criar novas funcionalidades,
-melhorar o código fonte com questões de segurança, design patterns, deixando-o mais legível possível.</p>
+<p>API REST para consulta e criação de recursos do dev burguer.</p>
 
-<p>Neste repositório irei criar a API da minha aplicação!</p>
+## Métodos
+Requisições para a API devem seguir os padrões:
+| Método | Descrição |
+|---|---|
+| `GET` | Retorna informações de um ou mais recursos. |
+| `POST` | Criar novo recurso. |
+| `PATCH` | Atualizar um recurso. |
+| `DELETE` | Remover um recurso. |
+
+
+## Respostas
+
+| Código | Descrição |
+|---|---|
+| `200` | Requisição executada com sucesso (success).|
+| `201` | Criação de recurso executado com sucesso.|
+| `422` | Id não encontrado ou informado incorretamente.|
+| `500` | Erro no servidor.|
 
 
 
