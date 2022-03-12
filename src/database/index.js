@@ -10,5 +10,6 @@ mongoose.connect(process.env.DB)
         console.log("Houve um erro ao se conectar ao banco de dados! \n" + error);
     }))
 
+
 mongoose.Promise = global.Promise;
 module.exports = mongoose;

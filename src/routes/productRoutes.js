@@ -7,7 +7,7 @@ router.post("/", async (req, res) => {
 
 
     if (!product_name || !product_cost || !product_amount || !product_ingredients) {
-        res.status(200).json({ message: "Campos vazios!" });
+        res.status(422).json({ message: "Campos vazios!" });
         return;
     }
     const product = { product_name, product_cost, product_amount, product_ingredients };
@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
 
 
     } catch (error) {
-        res.status(500).json({ error: error })
+        res.status(500).json({ error: error });
     }
 
     res.status(200).json(product);
@@ -27,10 +27,10 @@ router.post("/", async (req, res) => {
 //Listar produtos
 router.get("/", async (req, res) => {
     try {
-        const product = await Product.find();
-        res.status(200).json(product);
+        const products = await Product.find();
+        res.status(200).json(products);
     } catch (error) {
-        res.status(500).json({ error: error })
+        res.status(500).json({ error: error });
     }
 })
 
@@ -49,14 +49,11 @@ router.patch("/:id", async (req, res) => {
         if (updatedProduct.matchedCount === 0) {
             res.status(422).json({ message: "Erro ao atualizar produto!" });
             return;
-
         }
     } catch (error) {
         res.status(500).json({ error: error });
     }
-
     res.status(200).json(product);
-
 })
 
 //Deletar produto
@@ -72,11 +69,9 @@ router.delete("/:id", async (req, res) => {
 
     try {
         await Product.deleteOne({ _id: id });
-        res.status(200).json({message: "Produto deletado!"})
-
-
+        res.status(200).json({message: "Produto deletado!"});
     } catch (error) {
-        res.status(500).json({ error: error })
+        res.status(500).json({ error: error });
     }
 })
 

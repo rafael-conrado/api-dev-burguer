@@ -6,7 +6,7 @@ router.post('/', async (req, res) => {
     const { ingredient_name, ingredient_cost, ingredient_amount } = req.body;
 
     if (!ingredient_name || !ingredient_cost || !ingredient_amount) {
-        res.status(200).json({ message: "Todos os campos são obrigatórios!" });
+        res.status(422).json({ message: "Todos os campos são obrigatórios!" });
         return;
     }
     const ingredient = { ingredient_name, ingredient_cost, ingredient_amount };
@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
         await Ingredient.create(ingredient);
         res.status(201).json({ message: "Ingrediente criado com sucesso!" });
     } catch (error) {
-        res.status(500).json({ error: error })
+        res.status(500).json({ error: error });
     }
 })
 
@@ -23,10 +23,7 @@ router.post('/', async (req, res) => {
 router.get('/', async (req, res) => {
     try {
         const ingredient = await Ingredient.find();
-
-        res.status(200).json(ingredient)
-
-
+        res.status(200).json(ingredient);
     } catch (error) {
         res.status(500).json({ error: error })
     }
@@ -47,14 +44,11 @@ router.patch("/:id", async (req, res) => {
             res.status(422).json({ message: "Erro ao atualizar!" });
             return;
         }
-
         res.status(200).json(ingredient)
 
-
     } catch (error) {
-        res.status(500).json({ error: error })
+        res.status(500).json({ error: error });
     }
-
 })
 
 
@@ -71,11 +65,11 @@ router.delete("/:id", async (req, res) => {
 
     try {
         await Ingredient.deleteOne({ _id: id });
-        res.status(200).json({message: "Ingrediente deletado!"})
+        res.status(200).json({message: "Ingrediente deletado!"});
 
 
     } catch (error) {
-        res.status(500).json({ error: error })
+        res.status(500).json({ error: error });
     }
 })
 module.exports = router;    

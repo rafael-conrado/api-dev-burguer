@@ -23,19 +23,17 @@ app.get('/', (req, res) => {
 
 //Rotas pessoas
 const personRoutes = require('./routes/personsRoutes');
-app.use('/person',personRoutes);
+app.use('/person', personRoutes);
 
 //Rotas ingredientes
 const ingredientsRoutes = require('./routes/ingredientsRoutes');
-app.use('/ingredient',ingredientsRoutes);
+app.use('/ingredient', ingredientsRoutes);
 
 //Rotas ingredientes
 const productRoutes = require('./routes/productRoutes');
-app.use('/product',productRoutes);
+app.use('/product', productRoutes);
 
-/* 
-comandos npm init- criar arquivo json;
-yarn add express;
-yarn add mongosse;
+//Rotas combo
+const comboRoutes = require('./routes/comboRoutes');
+app.use('/combo', comboRoutes);
 
-*/

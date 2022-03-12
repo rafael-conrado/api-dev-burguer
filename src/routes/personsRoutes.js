@@ -14,11 +14,10 @@ router.post("/", async (req, res) => {
     const person = { name, salary, approved };
     try {
         await Person.create(person);
-        res.status(201).json({ message: "Pessoa inserida com sucesso!" })
+        res.status(201).json({ message: "Pessoa inserida com sucesso!" });
     } catch (error) {
         console.log(error);
-        res.status(500).json({ error: error })
-
+        res.status(500).json({ error: error });
     }
 })
 
@@ -29,7 +28,7 @@ router.get('/', async (req, res) => {
 
         res.status(200).json(people);
     } catch (error) {
-        res.status(500).json({ error: error })
+        res.status(500).json({ error: error });
     }
 })
 
@@ -48,7 +47,7 @@ router.get('/:id', async (req, res) => {
 
         res.status(200).json(person);
     } catch (error) {
-        res.status(500).json({ error: error })
+        res.status(500).json({ error: error });
     }
 })
 
@@ -62,7 +61,7 @@ router.patch('/:id', async (req, res) => {
         name,
         salary,
         approved
-    }
+    };
     try {
 
         const updatedPerson = await Person.updateOne({ _id: id }, person);
@@ -71,14 +70,11 @@ router.patch('/:id', async (req, res) => {
             res.status(422).json({message: "Erro ao atualizar!"});
             return;
         }
-
-        res.status(200).json(person)
-
+        res.status(200).json(person);
 
     } catch (error) {
-        res.status(500).json({ error: error })
+        res.status(500).json({ error: error });
     }
-
 })
 
 //Deletar usuário
@@ -94,13 +90,10 @@ router.delete('/:id', async (req, res) => {
 
     try {
         await Person.deleteOne({ _id: id });
-        res.status(200).json({message: "Usuário deletado!"})
-
-
+        res.status(200).json({message: "Usuário deletado!"});
     } catch (error) {
-        res.status(500).json({ error: error })
+        res.status(500).json({ error: error });
     }
-
 })
 
 
