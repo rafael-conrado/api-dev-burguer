@@ -1,5 +1,6 @@
 const Ingredient = require('../models/Ingredient');
 const router = require('express').Router();
+require('dotenv').config();
 
 //Criar ingrediente
 router.post('/', async (req, res) => {
@@ -41,10 +42,10 @@ router.patch("/:id", async (req, res) => {
         const updatedIngredient = await Ingredient.updateOne({ _id: id }, ingredient);
 
         if (updatedIngredient.matchedCount === 0) {
-            res.status(422).json({ message: "Erro ao atualizar!" });
+            res.status(422).json({ message: "Erro ao atualizar ingrediente!" });
             return;
         }
-        res.status(200).json(ingredient)
+        res.status(200).json(ingredient);
 
     } catch (error) {
         res.status(500).json({ error: error });
@@ -72,4 +73,6 @@ router.delete("/:id", async (req, res) => {
         res.status(500).json({ error: error });
     }
 })
+
+
 module.exports = router;    
