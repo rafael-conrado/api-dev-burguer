@@ -41,11 +41,12 @@ src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original
 ### 🔗 Link para consulta
 Principal: https://dev-burguer.herokuapp.com/
 
-Rota Pessoas: https://dev-burguer.herokuapp.com/person
-
 Rota ingredientes: https://dev-burguer.herokuapp.com/ingredient
 
 Rota produtos: https://dev-burguer.herokuapp.com/product
+
+Rota combos: https://dev-burguer.herokuapp.com/combo
+
 
 ### autor
 <img src="https://avatars.githubusercontent.com/u/52204078?s=400&u=39906fd95bef7d0983fcbc2adf5d4d01878f378f&v=4" width="100" height="100"/>

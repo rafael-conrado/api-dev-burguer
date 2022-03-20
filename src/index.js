@@ -21,10 +21,6 @@ app.get('/', (req, res) => {
     res.send("<h1>Conectado com sucesso!</h1><h3>Configurações realizadas corretamente!</h3><p>As configurações do node ao mongo foram feitas corretamente!</p>")
 })
 
-//Rotas pessoas
-const personRoutes = require('./routes/personsRoutes');
-app.use('/person', personRoutes);
-
 //Rotas ingredientes
 const ingredientsRoutes = require('./routes/ingredientsRoutes');
 app.use('/ingredient', ingredientsRoutes);
