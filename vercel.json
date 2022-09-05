@@ -5,13 +5,13 @@
             "src": "src/index.js",
             "use": "@now/node"
         }
-    ],
-    "routes": [
+    ]
+   /*  "routes": [
         {
             "src": "/(.*)",
-            "dest": "/src/index.js"
+            "dest": "/src/index"
         }
-    ]
+    ] */
   }
 
 
