@@ -6,7 +6,7 @@
             "use": "@now/node"
         }
     ],
-    "rewrites": [{ "source": "/src/(.*)", "destination": "/src" }],
+    "rewrites": [{ "source": "/src/(.*)", "destination": "/src" }]
 
     
   }
