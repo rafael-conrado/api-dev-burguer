@@ -10,10 +10,6 @@
         {
             "src": "/.*",
             "dest": "src/index.js"
-        },
-        {
-            "src": "/combo",
-            "dest": "src/index.js"
         }
     ],
     "rewrites": [
