@@ -20,6 +20,10 @@ app.get('/', (req, res) => {
     res.send("<h1>Conectado com sucesso!</h1><h3>Configurações realizadas corretamente!</h3><p>As configurações do node ao mongo foram feitas corretamente!</p>")
 })
 
+app.get('/abc', (req, res) => {
+    res.send("<p>bora LPÁ!</p>")
+})
+
 //Rotas ingredientes
 const ingredientsRoutes = require('./routes/ingredientsRoutes');
 app.use('/ingredient', ingredientsRoutes);
