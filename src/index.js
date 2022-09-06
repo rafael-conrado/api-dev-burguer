@@ -6,7 +6,9 @@ const app = express();
 const PORT = process.env.PORT || 3000
 
 app.use(express.json());
-app.use(express.urlencoded({ extends: false }));
+app.use(express.urlencoded({
+    extends: false
+}));
 
 
 app.listen(PORT, () => {
@@ -21,7 +23,9 @@ app.get('/', (req, res) => {
 })
 
 app.get('/abc', (req, res) => {
-    res.send("<p>bora LPÁ!</p>")
+    res.status(200).json({
+        uma: "descrição"
+    })
 })
 
 //Rotas ingredientes
@@ -35,4 +39,3 @@ app.use('/product', productRoutes);
 //Rotas combo
 const comboRoutes = require('./routes/comboRoutes');
 app.use('/combo', comboRoutes);
-
